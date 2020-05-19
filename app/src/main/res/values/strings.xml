@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FacebookFeedClone</string>
+
+    <!-- feed_item -->
+    <string name="photo_user">Foto de perfil do usuário</string>
+    <string name="icon_more">Mais opções</string>
+    <string name="icon_globe">ìcone de um globo</string>
+    <string name="image_post">Imagem da postagem</string>
+    <string name="time_post_ago">2 min</string>
+    <string name="text_test">Lorem ipsum congue amet mattis amet primis facilisis vel, donec metus accumsan fermentum facilisis at nulla, orci nisi aenean fringilla hac neque facilisis. praesent bibendum nibh eleifend consequat vivamus viverra, tortor cubilia amet ante erat phasellus libero, neque mi metus vestibulum odio. </string>
 </resources>
