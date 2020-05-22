@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         post1.setTextViewTime(getString(R.string.time_post_ago));
 
         posts.add(post1);
+        posts.add(post1);
+        posts.add(post1);
 
         postAdapter.setPosts(posts);
         postAdapter.notifyDataSetChanged();
@@ -52,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         postAdapter = new PostAdapter();
         rv.setAdapter(postAdapter);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rv.getContext(),
+                DividerItemDecoration.VERTICAL);
+
+        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider));
+        rv.addItemDecoration(dividerItemDecoration);
     }
 
     private static class PostViewHolder extends RecyclerView.ViewHolder {
