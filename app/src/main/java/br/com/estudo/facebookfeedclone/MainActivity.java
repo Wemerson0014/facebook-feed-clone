@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import br.com.estudo.facebookfeedclone.model.Post;
 
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         post1.setImageViewUser(R.drawable.jon_snow);
         post1.setImageViewPost(R.drawable.post_1);
         post1.setTextViewUsername(getString(R.string.jon_snow));
-        post1.setTextViewContent(getString(R.string.text_post_jon));
+        post1.setTextViewContent(getString(R.string.text_post));
         post1.setTextViewTitle(getString(R.string.link_first_post).toUpperCase());
         post1.setTextViewSubtitle(getString(R.string.title_first_post));
         post1.setTextViewTime(getString(R.string.time_post_ago));
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
         posts.add(post1);
         posts.add(post1);
         posts.add(post1);
+
+        Post post2 = new Post();
+        post2.setImageViewUser(R.drawable.ned_stark);
+        post2.setImageViewPost(R.drawable.post_2);
+        post2.setTextViewUsername(getString(R.string.ned_stark));
+        post2.setTextViewContent(getString(R.string.text_post));
+
+        posts.add(post2);
 
         postAdapter.setPosts(posts);
         postAdapter.notifyDataSetChanged();
@@ -60,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rv.getContext(),
                 DividerItemDecoration.VERTICAL);
 
-        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider));
+        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(this, R.drawable.divider)));
         rv.addItemDecoration(dividerItemDecoration);
     }
 
@@ -93,6 +104,20 @@ public class MainActivity extends AppCompatActivity {
             textViewContent.setText(post.getTextViewContent());
             textViewTitle.setText(post.getTextViewTitle());
             textViewSubtitle.setText(post.getTextViewSubtitle());
+
+            if (post.getTextViewTitle() == null) {
+                itemView.findViewById(R.id.post_container).setVisibility(View.GONE);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout) itemView);
+                constraintSet.setDimensionRatio(R.id.image_view_post, "1:1");
+                constraintSet.applyTo((ConstraintLayout) itemView);
+            } else {
+                itemView.findViewById(R.id.post_container).setVisibility(View.VISIBLE);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout) itemView);
+                constraintSet.setDimensionRatio(R.id.image_view_post, "16:9");
+                constraintSet.applyTo((ConstraintLayout) itemView);
+            }
         }
     }
 
