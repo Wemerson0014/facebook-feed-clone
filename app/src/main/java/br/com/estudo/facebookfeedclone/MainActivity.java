@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupTabLayout();
         setupRecycler();
         postsFakes();
     }
@@ -73,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
 
         dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(this, R.drawable.divider)));
         rv.addItemDecoration(dividerItemDecoration);
+    }
+
+    void setupTabLayout() {
+
+        TabLayout tabLayout = findViewById(R.id.tab_nav);
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.feed));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.request));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.users));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.watch));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.notify));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.more));
     }
 
     private static class PostViewHolder extends RecyclerView.ViewHolder {
@@ -149,4 +163,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
