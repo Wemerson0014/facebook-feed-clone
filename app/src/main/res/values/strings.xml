@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">FacebookFeedClone</string>
+
+    <!-- feed_item -->
+    <string name="photo_user">Foto de perfil do usuário</string>
+    <string name="icon_more">Mais opções</string>
+    <string name="icon_globe">ìcone de um globo</string>
+    <string name="image_post">Imagem da postagem</string>
+    <string name="time_post_ago">2 min</string>
+    <string name="button_like">like</string>
+    <string name="button_comment">Comentar</string>
+    <string name="button_share">Compartilhar</string>
+    <string name="jon_snow">Jon Snow</string>
+    <string name="ned_stark">Ned Stark</string>
+    <string name="link_first_post">gameofthrones.com</string>
+    <string name="title_first_post">Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss. Itss an adapter</string>
+    <string name="text_test">Lorem ipsum congue amet mattis amet primis facilisis vel, donec metus accumsan fermentum facilisis at nulla, orci nisi aenean fringilla hac neque facilisis. praesent bibendum nibh eleifend consequat vivamus viverra, tortor cubilia amet ante erat phasellus libero, neque mi metus vestibulum odio. </string>
+    <string name="text_post">No matter what Yeritte says, Jon Snow knows a few things. The bastard son of Ned Stark (or is he?) grew up in a house-hold where he was welcomed by Ned and his half-siblings but not so much by Catelyn Stark. When the opportunity came to join the Nights Watch at Castle Black, he saw</string>
+
+    <!-- activity_main -->
+    <string name="edit_search">Pesquisar</string>
+    <string name="image_camera">Ícone camera</string>
+    <string name="image_messenger"> Ícone do Messenger</string>
 </resources>
